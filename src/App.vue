@@ -11,7 +11,6 @@
                 <transition name="flip" mode="out-in">
                     <component :is="mode" @answered="answered($event)" @confirmed="mode = 'app-question'"></component>
                 </transition>
-        
             </div>
         </div>
     </div>
@@ -45,12 +44,20 @@
 </script>
 
 <style>
+    .flip-enter {
+
+    }
+
     .flip-enter-active{
-        animate: flip-in 0.5s ease-out forwards;
+        animation: flip-in 0.5s ease-out forwards;
+    }
+
+    .flip-leave {
+
     }
 
     .flip-leave-active{
-        animate: flip-out 0.5s ease-out forwards;
+        animation: flip-out 0.5s ease-out forwards;
     }
 
     @keyframes flip-out {
@@ -58,7 +65,7 @@
             transform: rotateY(0deg);
         }
         to {
-            transform: rotatey(90deg);
+            transform: rotateY(90deg);
         }
     }
 
@@ -67,7 +74,7 @@
             transform: rotateY(90deg);
         }
         to {
-            tramsform: rotateY(0deg);
+            transform: rotateY(0deg);
         }
     }
 </style>
